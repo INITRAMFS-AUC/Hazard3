@@ -419,29 +419,29 @@ end else begin: instr_decompress
 end
 endgenerate
 
-generate
-if (EXTENSION_ZCMP) begin: have_uop_ctr;
-	always @ (posedge clk or negedge rst_n) begin
-		if (!rst_n) begin
-			uop_ctr <= 4'h0;
-		end else begin
-			uop_ctr <= uop_ctr_nxt;
-`ifdef HAZARD3_ASSERTIONS
-			assert(in_uop_seq || uop_ctr == 4'h0);
-			assert(in_uop_seq || zcmp_ls_reg == 5'h01);
-			assert(in_uop_seq || !uop_atomic);
-			assert(in_uop_seq || !uop_no_pc_update);
-			if (uop_seq_end) begin
-				assert(in_uop_seq);
-				assert(instr_out_uop_stall || uop_ctr_nxt == 4'h0);
-			end
-`endif
-		end
-	end
-end else begin: no_uop_ctr
-	always @ (*) uop_ctr = 4'h0;
-end
-endgenerate
+//generate
+//if (EXTENSION_ZCMP) begin: have_uop_ctr;
+//	always @ (posedge clk or negedge rst_n) begin
+//		if (!rst_n) begin
+//			uop_ctr <= 4'h0;
+//		end else begin
+//			uop_ctr <= uop_ctr_nxt;
+//`ifdef HAZARD3_ASSERTIONS
+//			assert(in_uop_seq || uop_ctr == 4'h0);
+//			assert(in_uop_seq || zcmp_ls_reg == 5'h01);
+//			assert(in_uop_seq || !uop_atomic);
+//			assert(in_uop_seq || !uop_no_pc_update);
+//			if (uop_seq_end) begin
+//				assert(in_uop_seq);
+//				assert(instr_out_uop_stall || uop_ctr_nxt == 4'h0);
+//			end
+//`endif
+//		end
+//	end
+//end else begin: no_uop_ctr
+//	always @ (*) uop_ctr = 4'h0;
+//end
+//endgenerate
 
 endmodule
 
