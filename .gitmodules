@@ -3,13 +3,13 @@
 	url = https://github.com/wren6991/riscv-arch-test.git
 [submodule "scripts"]
 	path = scripts
-	url = https://github.com/INITRAMFS-AUC/fpgascripts.git
+	url = git@github.com:INITRAMFS-AUC/fpgascripts.git
 [submodule "test/formal/riscv-formal"]
 	path = test/formal/riscv-formal/riscv-formal
 	url = https://github.com/Wren6991/riscv-formal.git
 [submodule "example_soc/libfpga"]
 	path = example_soc/libfpga
-	url = https://github.com/INITRAMFS-AUC/libfpga.git
+	url = git@github.com:INITRAMFS-AUC/libfpga.git
 [submodule "test/sim/riscv-tests/riscv-tests"]
 	path = test/sim/riscv-tests/riscv-tests
 	url = https://github.com/Wren6991/riscv-tests.git
