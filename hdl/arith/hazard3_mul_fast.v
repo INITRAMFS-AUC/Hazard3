@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 /*****************************************************************************\
 |                      Copyright (C) 2021-2022 Luke Wren                      |
 |                     SPDX-License-Identifier: Apache-2.0                     |
